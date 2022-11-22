@@ -14,17 +14,17 @@ It means you have to build yourself the Docker images of your project. It is the
 
 You then have to set up:
 
-• A Docker container that contains NGINX with TLSv1.2 or TLSv1.3 only.
-• A Docker container that contains WordPress + php-fpm (it must be installed and
+- A Docker container that contains NGINX with TLSv1.2 or TLSv1.3 only.
+- A Docker container that contains WordPress + php-fpm (it must be installed and
 configured) only without nginx.
-• A Docker container that contains MariaDB only without nginx.
-• A volume that contains your WordPress database.
-• A second volume that contains your WordPress website files.
-• A docker-network that establishes the connection between your containers.
+- A Docker container that contains MariaDB only without nginx.
+- A volume that contains your WordPress database.
+- A second volume that contains your WordPress website files.
+- A docker-network that establishes the connection between your containers.
 
 Your containers have to restart in case of a crash.
 
-• In your WordPress database, there must be two users, one of them being the administrator. The administrator’s username can’t contain admin/Admin or administrator/Administrator (e.g., admin, administrator, Administrator, admin-123, and
+- In your WordPress database, there must be two users, one of them being the administrator. The administrator’s username can’t contain admin/Admin or administrator/Administrator (e.g., admin, administrator, Administrator, admin-123, and
 so forth).
 
 To make things simpler, you have to configure your domain name so it points to your local IP address.
