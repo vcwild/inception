@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  mariadb:
+    build: requirements/mariadb
+    container_name: mariadb
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_ROOT_USER: ${DB_ROOT_USER}
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    networks:
+      - inception
+    restart: always
+
+networks:
+  inception:
+    driver: bridge
