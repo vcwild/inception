@@ -12,6 +12,20 @@ services:
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     networks:
       - inception
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
+    ports:
+      - 3306:3306
+    restart: always
+  nginx:
+    build: requirements/nginx
+    container_name: nginx
+    networks:
+      - inception
+    volumes:
+      - ./data/nginx:/var/www/html
+    ports:
+      - 443:443
     restart: always
 
 networks:
