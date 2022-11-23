@@ -1,3 +1,12 @@
+<div align="center">
+  <img src=".github/assets/inception.png" width="230px" />
+</div>
+<div align="center">
+  <img src="https://img.shields.io/github/languages/count/vcwild/inception?color=%23E96418&style=flat-square" alt="languages" />
+  <img src="https://img.shields.io/github/license/vcwild/inception?color=%23E96418&style=flat-square" alt="license" />
+  <img src="https://img.shields.io/github/repo-size/vcwild/inception?color=%23E96418&style=flat-square" alt="repo size" />
+</div>
+
 # 42 Inception
 
 Inception is a project to learn containerization and orchestration. We will use Docker and Docker Compose to build a simple web application.
@@ -30,3 +39,16 @@ so forth).
 To make things simpler, you have to configure your domain name so it points to your local IP address.
 This domain name must be login.42.fr. Again, you have to use your own login.
 For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website.
+
+# LICENSE
+
+This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+# References
+
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [NGINX](https://www.nginx.com/)
+- [WordPress](https://wordpress.org/)
+- [MariaDB](https://mariadb.org/)
+- [Alpine](https://alpinelinux.org/)
