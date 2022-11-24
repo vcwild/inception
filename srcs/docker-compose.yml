@@ -12,7 +12,7 @@ services:
       - ./data/mariadb:/var/lib/mysql
     ports:
       - 3306:3306
-    restart: always
+    restart: on-failure
   nginx:
     build: requirements/nginx
     container_name: nginx

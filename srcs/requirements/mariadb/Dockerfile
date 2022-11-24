@@ -8,6 +8,8 @@ RUN apk update \
 
 COPY tools/config.sh /tmp/config.sh
 
+RUN chmod u+x /tmp/config.sh
+
 EXPOSE 3306
 
 VOLUME /var/lib/mysql
