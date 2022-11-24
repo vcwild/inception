@@ -42,6 +42,26 @@ For example, if your login is wil, wil.42.fr will redirect to the IP address poi
 
 ## Usage
 
+The following commands are used for evaluation purposes.
+
+### Check the blog
+
+In order to check the blog, simply run the following command:
+
+```sh
+xdg-open https://vwildner.42.fr
+```
+
+Be aware that the available cert is self-signed and will be rejected by your browser.
+
+Alternatively, you can also do this via terminal:
+
+```sh
+curl --insecure https://vwildner.42.fr -vv
+```
+
+### Check the containers
+
 First source the environment variables:
 
 ```bash
@@ -61,6 +81,13 @@ You can access the database by using:
 
 ```sh
 docker exec -it mariadb mysql -u$DB_USER -p$DB_PASSWORD
+```
+
+You will need to check if there are at least 2 users in the wp_users table:
+
+```sh
+docker exec -it mariadb mysql -u$DB_USER -p$DB_PASSWORD \
+-e "USE '$DB_NAME';SELECT * FROM wp_users"
 ```
 
 ### Backup
