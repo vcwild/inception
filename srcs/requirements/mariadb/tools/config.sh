@@ -31,9 +31,16 @@ CREATE USER '$DB_USER'@'%' IDENTIFIED by '$DB_PASSWORD';
 GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'%';
 FLUSH PRIVILEGES;
 EOF
+
 	# run init.sql
 	/usr/bin/mysqld --user=mysql --bootstrap < $tfile
+
+	/usr/share/mariadb/mysql.server start
+	mysql -p$DB_ROOT_PASSWORD -h localhost < /tmp/dump.sql
+	/usr/share/mariadb/mysql.server stop
+
 	rm -f $tfile
+	rm -f /tmp/dump.sql
 fi
 
 # allow remote connections

@@ -8,6 +8,8 @@ RUN apk update \
 
 COPY tools/config.sh /tmp/config.sh
 
+COPY conf/dump.sql /tmp/dump.sql
+
 RUN chmod u+x /tmp/config.sh
 
 EXPOSE 3306
