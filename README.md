@@ -40,6 +40,37 @@ To make things simpler, you have to configure your domain name so it points to y
 This domain name must be login.42.fr. Again, you have to use your own login.
 For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website.
 
+## Usage
+
+First source the environment variables:
+
+```bash
+source .env
+```
+
+You can access any container by using:
+
+```sh
+#List all containers
+docker container ls
+#Access a container
+docker exec -it [container_name] sh
+```
+
+You can access the database by using:
+
+```sh
+docker exec -it mariadb mysql -u$DB_USER -p$DB_PASSWORD
+```
+
+### Backup
+
+You can backup the database from within docker by using:
+
+```sh
+docker exec -it mariadb mysqldump -u$DB_USER -p$DB_PASSWORD --all-databases > wordpress.sql
+```
+
 # LICENSE
 
 This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
