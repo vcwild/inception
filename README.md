@@ -2,9 +2,9 @@
   <img src=".github/assets/inception.png" width="230px" />
 </div>
 <div align="center">
-  <img src="https://img.shields.io/github/languages/count/vcwild/inception?color=%23E96418&style=flat-square" alt="languages" />
-  <img src="https://img.shields.io/github/license/vcwild/inception?color=%23E96418&style=flat-square" alt="license" />
-  <img src="https://img.shields.io/github/repo-size/vcwild/inception?color=%23E96418&style=flat-square" alt="repo size" />
+  <img src="https://img.shields.io/github/languages/count/vcwild/inception?color=%233f52a6&style=flat-square" alt="languages" />
+  <img src="https://img.shields.io/github/license/vcwild/inception?color=%233f52a6&style=flat-square" alt="license" />
+  <img src="https://img.shields.io/github/repo-size/vcwild/inception?color=%233f52a6&style=flat-square" alt="repo size" />
 </div>
 
 # 42 Inception
