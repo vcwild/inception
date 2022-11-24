@@ -19,8 +19,8 @@
  */
 
 /** Fix wordpress css ngrox */
-define( 'WP_HOME', 'https://vwildner.42.fr' );
-define( 'WP_SITEURL', 'https://vwildner.42.fr' );
+define( "WP_HOME", "https://" .$_SERVER["HTTP_HOST"]. "/" );
+define( "WP_SITEURL", "https://" .$_SERVER["HTTP_HOST"]. "/" );
 
 /** True if do caching */
 define( 'WP_CACHE', true );

@@ -1,15 +1,12 @@
 
 
-FROM alpine:3.15
+FROM alpine:3.17
 
 LABEL maintainer="Victor Wildner <vwildner@redhat.com>"
 
-WORKDIR /var/www
+WORKDIR /var/www/wordpress
 
-RUN apk add nginx openssl --no-cache; \
-    mkdir wordpress; \
-    touch wordpress/index.html; \
-    echo hello, world > wordpress/index.html;
+RUN apk add --no-cache nginx openssl
 
 RUN mkdir -p /etc/nginx/snippets \
     && mkdir -p /etc/ssl/private \
@@ -19,7 +16,6 @@ RUN mkdir -p /etc/nginx/snippets \
     -subj "/CN=*.vwildner.42.fr/C=BR/L=Sao Paulo" \
     -keyout /etc/ssl/private/nginx-selfsigned.key \
     -out /etc/ssl/certs/nginx-selfsigned.crt
-
 
 COPY conf/nginx.conf /etc/nginx/http.d/default.conf
 

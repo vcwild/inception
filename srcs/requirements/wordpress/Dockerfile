@@ -1,6 +1,6 @@
 FROM alpine:3.15
 
-WORKDIR /var/www/wordpress
+WORKDIR /var/www
 
 LABEL maintainer="Victor Wildner <vwildner@redhat.com>"
 
@@ -13,10 +13,14 @@ RUN apk add --no-cache php7-fpm php7-common php7-session php7-iconv php7-json ph
 RUN wget https://wordpress.org/wordpress-6.0.3.tar.gz \
     && tar xzf wordpress-6.0.3.tar.gz
 
-ADD conf/wordpress.conf /etc/php7/php-fpm.d/www.conf
+COPY conf/wordpress.conf /etc/php7/php-fpm.d/www.conf
 
-ADD conf/wp-config.php /var/www/wordpress/wp-config.php
+COPY conf/wp-config.php /var/www/wordpress/wp-config.php
 
 RUN chown nobody:nobody /var/www/wordpress/wp-config.php
+
+VOLUME /var/www/wordpress
+
+EXPOSE 9000
 
 CMD [ "php-fpm7", "-F" ]
