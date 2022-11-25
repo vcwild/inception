@@ -8,8 +8,8 @@ services:
       - .env
     networks:
       - inception
-    # volumes:
-    #   - ./data/mariadb:/var/lib/mysql
+    volumes:
+      - mariadb-data:/var/lib/mysql
     ports:
       - 3306:3306
     restart: on-failure
@@ -34,6 +34,14 @@ services:
       - .env
     depends_on:
       - mariadb
+  redis:
+    build: bonus/redis/
+    container_name: redis
+    networks:
+      - inception
+    restart: always
+    depends_on:
+      - wordpress
 
 networks:
   inception:
